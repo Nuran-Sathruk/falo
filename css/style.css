@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F2F2F2;
+    color: #000;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    display: flex;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    padding: 10rem 2.5rem 4rem;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: padding 0.45s cubic-bezier(0.4,0,0.2,1);
+}
+
+.container.compact {
+    padding: 2.5rem 1.5rem 1.5rem;
+}
+
+.logo {
+    font-size: 160px;
+    font-weight: 600;
+    letter-spacing: -0.045em;
+    line-height: 0.9;
+}
+
+.logo .falo {
+    color: #3232FF;
+}
+
+.logo .dot {
+    color: #0A0A0A;
+}
+
+.subtag {
+    margin-top: 0.2px;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: #888899;
+    text-transform: uppercase;
+}
+
+.search-container {
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 560px;
+    margin: 2rem;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+}
+
+.search-box {
+    width: 100%;
+    gap: 0.6rem;
+    border-radius: 14px;
+    border: 2px solid #3232FF;
+    padding: 21px;
+    display: flex;
+    align-items: center;
+    background-color: #FFF;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-box svg {
+    flex-shrink: 0;
+    color: #C8C6C0;
+}
+
+.search-box input {
+    flex: 1;
+    min-width: 0;
+    padding: 1rem 0;
+    background: transparent;
+    font-size: 0.9rem;
+    color: #000;
+    border: none;
+    outline: none;
+}
+
+.search-box input::placeholder {
+    color: #C8C6C0;
+}
+
+.search-button {
+    flex-shrink: 0;
+    gap: 0.4rem;
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 0.75rem;
+    background: #3232FF;
+    color: #FFF;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    transition: opacity 0.15s, transform 0.1s;
+}
+
+.search-button:hover {
+    opacity: 0.85;
+}
+
+.search-button:active {
+    transform: scale(0.97);
+}
+
+.results-section {
+    gap: 1rem;
+    width: 100%;
+    max-width: 640px;
+    padding: 2rem 1.25rem 5rem;
+    flex-direction: column;
+    display: none;
+}
+
+.results-section.visible {
+    display: flex;
+}
+
+.results-header {
+    gap: 0.5rem;
+    font-size: 0.65rem;
+    color: #3232FF;
+    letter-spacing: 0.14em;
+    border-bottom: 1px solid #C8C6C0;
+    padding-bottom: 0.75rem;
+    text-transform: uppercase;
+    align-items: center;
+    display: flex;
+}
+
+.results-header b {
+    font-weight: 500;
+    color: #3232DA;
+}
+
+.quote-card {
+    position: relative;
+    border-radius: 14px;
+    border: 1.5px solid #000;
+    padding: 1.5rem 1.75rem;
+    background: #FFF;
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.quote-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    border-radius: 3px 0 0 3px;
+    background: #3232DA;
+    opacity: 0.6;
+}
+
+.quote-card:hover {
+    border-color: #888899;
+}
+
+.quote-mark {
+    position: absolute;
+    top: 0.75rem;
+    right: 1.4rem;
+    line-height: 1;
+    font-size: 5rem;
+    color: #C8C6C0;
+    opacity: 0.4;
+    pointer-events: none;
+    user-select: none;
+}
+
+.quote-text {
+    margin-bottom: 1.1rem;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(0.95rem, 2.4vw, 1.08rem);
+    color: #000;
+    font-style: italic;
+    line-height: 1.75;
+}
+
+.quote-meta {
+    gap: 0.5rem;
+    align-items: center;
+    font-size: 0.63rem;
+    color: #000;
+    letter-spacing: 0.1em;
+    display: flex;
+}
+
+.quote-meta svg {
+    flex-shrink: 0;
+    color: #3232DA;
+}
+
+.quote-work {
+    color: #3232FF;
+}
+
+.no-results {
+    margin: 0.75rem;
+    padding: 3rem 1rem;
+    font-size: 13px;
+    color: #3232FF;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+
+.no-results svg {
+    color: #3232DA;
+}
+
+@media (max-width: 600px) {
+
+.container {
+    padding: 10rem 2.5rem 4rem;
+}
+
+.container.compact {
+    padding: 1.5rem 1rem 1rem;
+}
+
+.subtag {
+    font-size: 0.6rem;
+    letter-spacing: 0.16em;
+}
+
+.search-container {
+    margin-top: 1.5rem;
+}
+
+.results-section {
+    padding: 1.5rem 1rem 3rem;
+}
+
+.quote-card {
+    padding: 1.25rem;
+}
+
+.quote-mark {
+    font-size: 4px;
+    right: 1px;
+}
+
+.quote-meta {
+    flex-wrap: wrap;
+}
+
+}
+
+@media (max-width: 360px) {
+
+.search-box {
+    gap: 0.4rem;
+    padding: 0 0.65rem;
+}
+
+.search-box input {
+    font-size: 0.85rem;
+}
+
+.search-button {
+    gap: 0.25rem;
+    padding: 0.45rem 0.65rem;
+}
+
+}
